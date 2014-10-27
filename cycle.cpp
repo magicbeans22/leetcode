@@ -8,7 +8,6 @@ struct ListNode {
 };
 
 bool hasCycle(ListNode *head) {
-//	cout << (*head).val << endl;
 	if (head == NULL) { // empty list
 		return false;
 	}
@@ -31,10 +30,6 @@ bool hasCycle(ListNode *head) {
 	ListNode *fast, *slow;
 	fast = head->next->next;
 	slow = head->next;
-	//cout<<fast->val<<"  "<<slow->val<<endl;
-	//cout<<fast->next->val<<endl;
-	
-	//while(!(fast->next->next==NULL || fast->next==NULL)){
 	while(fast->next!=NULL && fast->next->next !=NULL){	
 		if (fast == slow) return true;
 		fast = fast->next->next;
@@ -65,13 +60,6 @@ int main(){
 
 	ListNode *node5 = NULL;
 	cout << hasCycle(node5) << endl; 
-/*   	b = hasCycle(node5);
-	if (b) {
-		cout << b << endl;
-	} else {
-		cout << b << endl;
-	}	
-*/
 	ListNode node6 = ListNode(6);
 	node6.next = &node6;
   	cout << hasCycle(&node6) << endl;
