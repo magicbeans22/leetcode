@@ -19,11 +19,13 @@ ListNode *deleteDuplicates(ListNode *head) {
 	{
 		if (temp->val == current->val)
 		{
+		//	struct ListNode *t = temp;
 			current->next = temp->next;
+			temp = current -> next;
+		//	delete t;
 //			cout << "duplicate"<<endl;
 //			delete temp;  // c++ won't need this?!?!
 //			cout << "deleted" <<endl;
-			temp = current->next;
 		}
 		else
 		{
@@ -34,8 +36,9 @@ ListNode *deleteDuplicates(ListNode *head) {
 	}        
 	
 	if (temp->val == current->val)
-		{
+		{//	struct ListNode *t = temp;
 			current -> next = temp->next;
+		//	delete t;
 		}
 	
 	return head;
@@ -47,6 +50,7 @@ int printlist(struct ListNode *head){
 		cout << cur->val<<endl;
 		cur = cur->next;		
 	}
+	cout<<"\n"<<endl;
 	return 0;
 }
 
